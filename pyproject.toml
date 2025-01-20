@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.2", "versioningit"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antefoyer"
+description = "A simple antechamber plugin for foyer."
+readme = "README.md"
+authors = [{name = "Ryan S. DeFever", email = "rdefever@nd.edu"}]
+maintainers = [
+  {name = "Chris Jones", email = "chrisjones4@u.boisestate.edu"},
+]
+license= {text = "MIT"}
+urls = {Homepage = "https://github.com/chrisjonesBSU/antefoyer"}
+requires-python = ">=3.9"
+dynamic = ["version"]
+
+[project.entry-points."foyer.forcefields"]
+load_GAFF = "antefoyer.gafffoyer:load_GAFF"
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = true
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages]
+find = {namespaces = false}
+
+[tool.versioningit]
+default-version = "1+unknown"
+
+[tool.versioningit.format]
+distance = "{base_version}+{distance}.{vcs}{rev}"
+dirty = "{base_version}+{distance}.{vcs}{rev}.dirty"
+distance-dirty = "{base_version}+{distance}.{vcs}{rev}.dirty"
+
+[tool.versioningit.vcs]
+method = "git"
+match = ["*"]
+default-tag = "0.0.0"

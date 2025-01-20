@@ -4,11 +4,6 @@ A simple antechamber plugin for foyer
 """
 
 # Add imports here
-from .antefoyer import *
+from .antefoyer import ante_atomtyping, ante_charges 
 
-# Handle versioneer
-from ._version import get_versions
-versions = get_versions()
-__version__ = versions['version']
-__git_revision__ = versions['full-revisionid']
-del get_versions, versions
+__version__ = "0.0.1"
