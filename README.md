@@ -19,16 +19,16 @@ The following instructions will create a new conda environment (antefoyer) and i
     git clone https://github.com/chrisjonesBSU/antefoyer
     cd antefoyer
     mamba env create -f environment.yml
-    conda activate antefoyer
+    mamba activate antefoyer
 
 To install a development environment where changes made to the source code are reflected in your environment:
 
     git clone https://github.com/chrisjonesBSU/antefoyer
     cd antefoyer
     mamba env create -f environment-dev.yml
+    mamba activate antefoyer-dev
     pip install -e .
     
-
 ## Optional dependencies
 To complete some of the examples below you will need mbuild and openbabel installed. These can be added via conda:
 
