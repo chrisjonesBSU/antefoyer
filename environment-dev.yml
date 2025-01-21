@@ -1,4 +1,4 @@
-name: antefoyer 
+name: antefoyer-dev 
 channels:
   - conda-forge
 dependencies:
