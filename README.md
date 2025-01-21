@@ -1,10 +1,5 @@
 antefoyer
 ==============================
-[//]: # (Badges)
-[![Travis Build Status](https://travis-ci.org/REPLACE_WITH_OWNER_ACCOUNT/antefoyer.svg?branch=master)](https://travis-ci.org/REPLACE_WITH_OWNER_ACCOUNT/antefoyer)
-[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/REPLACE_WITH_APPVEYOR_LINK/branch/master?svg=true)](https://ci.appveyor.com/project/REPLACE_WITH_OWNER_ACCOUNT/antefoyer/branch/master)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/antefoyer/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/antefoyer/branch/master)
-
 This repository provides support for the General Amber Force Field (GAFF) in foyer. Foyer is a part of the Molecular Simulation Design Framework (MoSDeF). A few relevant links are provided below:
 
 - [MoSDeF](https://mosdef.org)
@@ -19,24 +14,25 @@ There are two primary components to this repository:
 - Antechamber wrapper to integrate antechamber atomtyping and AM1-BCC charge assignment directly into MoSDeF workflows.
 
 ## Installation
-The following instructions will create a new python 3.7 conda environment (antefoyer) and install the required packages and dependencies:
+The following instructions will create a new conda environment (antefoyer) and install the required packages and dependencies:
 
-    git clone https://github.com/rsdefever/antefoyer
-    conda create --name antefoyer -c conda-forge -c mosdef -c omnia python=3.7 --file antefoyer/requirements.txt
+    git clone https://github.com/chrisjonesBSU/antefoyer
+    cd antefoyer
+    mamba env create -f environment.yml
     conda activate antefoyer
-    cd antefoyer/.
-    pip install . 
 
-## Dependencies
+To install a development environment where changes made to the source code are reflected in your environment:
 
-- foyer >= 0.7.4
-- networkx
-- ambertools (for the `antefoyer.ante_atomtyping` and `antefoyer.ante_charges` functions)
+    git clone https://github.com/chrisjonesBSU/antefoyer
+    cd antefoyer
+    mamba env create -f environment-dev.yml
+    pip install -e .
+    
 
 ## Optional dependencies
 To complete some of the examples below you will need mbuild and openbabel installed. These can be added via conda:
 
-	conda install -c conda-forge mbuild openbabel
+	mamba install -c conda-forge mbuild openbabel
 
 ## Usage
 There are two primary workflows for atomtyping with `antefoyer`. The first uses the traditional `foyer` approach with SMARTS strings defined in `antefoyer/xml/gaff.xml`. 
@@ -94,4 +90,3 @@ Project based on the
 
 
 This material is based upon work supported by the National Science Foundation under Grant #1835874
-

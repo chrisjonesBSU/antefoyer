@@ -7,3 +7,5 @@ dependencies:
   - networkx
   - pip
   - python >=3.9, <3.13
+  - pip:
+      - git+https://github.com/chrisjonesBSU/antefoyer.git@main 
